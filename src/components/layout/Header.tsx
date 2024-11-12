@@ -45,6 +45,9 @@ export default function Header() {
             <Link href="/contact" className="hover:text-accent transition-colors">
               LIÊN HỆ
             </Link>
+            <Link href="/journal" className="hover:text-accent transition-colors">
+              NHẬT KÝ
+            </Link>
             <ThemeToggle />
             <CartButton />
           </div>
@@ -92,6 +95,9 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   LIÊN HỆ
+                </Link>
+                <Link href="/journal" className="hover:text-accent transition-colors">
+                  NHẬT KÝ
                 </Link>
               </div>
             </div>
