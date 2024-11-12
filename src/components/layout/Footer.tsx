@@ -34,10 +34,19 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-sm font-light uppercase tracking-wider">Liên hệ</h4>
             <div className="space-y-2 text-sm text-muted">
-              <p>123 Đường ABC, Quận XYZ</p>
-              <p>TP.HCM, Việt Nam</p>
-              <p>hello@currency.vn</p>
-              <p>0123 456 789</p>
+              <p>69/68 Đ. Đặng Thuỳ Trâm, Phường 13</p>
+              <p>Bình Thạnh, TP.HCM 70000</p>
+              <p>028 7105 9999</p>
+              <div className="flex items-center gap-2">
+                <a 
+                  href="https://www.instagram.com/currency.vn/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors"
+                >
+                  @currency.vn
+                </a>
+              </div>
             </div>
           </div>
         </div>
