@@ -6,6 +6,7 @@ import "./globals.css";
 import { CartProvider } from "@/contexts/CartContext";
 import { Toaster } from 'react-hot-toast';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const montserrat = Montserrat({ 
   subsets: ['vietnamese'],
@@ -38,6 +39,7 @@ export default function RootLayout({
               }
             }}
           />
+          <SpeedInsights />
           <Analytics />
         </CartProvider>
       </body>
