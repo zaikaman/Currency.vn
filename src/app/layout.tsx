@@ -7,6 +7,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import { Toaster } from 'react-hot-toast';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Chatbot from "@/components/ui/Chatbot";
 
 const montserrat = Montserrat({ 
   subsets: ['vietnamese'],
@@ -60,6 +61,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <Chatbot />
           <Toaster 
             position="top-center"
             gutter={8}
