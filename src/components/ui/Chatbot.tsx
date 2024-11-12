@@ -55,7 +55,7 @@ export default function Chatbot() {
   return (
     <div className="fixed bottom-6 right-6 z-50">
       {isOpen ? (
-        <div className="bg-background border border-vintage-black/10 rounded-lg shadow-lg w-[350px] h-[500px] flex flex-col">
+        <div className="bg-light-bg dark:bg-[#1A1A1A] border border-light-border dark:border-dark-border rounded-lg shadow-lg w-[350px] h-[500px] flex flex-col">
           <div className="p-4 border-b border-vintage-black/10 flex justify-between items-center">
             <h3 className="font-montserrat">Currency VN Support</h3>
             <button
@@ -106,12 +106,12 @@ export default function Chatbot() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Nhập tin nhắn..."
-                className="flex-1 px-4 py-2 bg-[#2A2A2A] border border-vintage-black/10 rounded-lg focus:outline-none focus:border-accent"
+                className="w-full px-4 py-2 bg-light-bg dark:bg-[#2A2A2A] border border-light-border dark:border-vintage-black/10 focus:outline-none focus:border-accent"
               />
               <button
                 type="submit"
                 disabled={isLoading}
-                className="px-4 py-2 bg-vintage-black text-vintage-white rounded-lg hover:bg-accent transition-colors disabled:opacity-50"
+                className="w-full px-8 py-3 bg-light-text dark:bg-vintage-black text-light-bg dark:text-vintage-white hover:bg-accent transition-colors"
               >
                 <FaRegPaperPlane />
               </button>
@@ -121,7 +121,7 @@ export default function Chatbot() {
       ) : (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-vintage-black text-vintage-white p-4 rounded-full hover:bg-accent transition-colors shadow-lg"
+          className="bg-light-text dark:bg-vintage-black text-light-bg dark:text-vintage-white p-4 rounded-full hover:bg-accent transition-colors shadow-lg"
         >
           <BsChatDots size={24} />
         </button>

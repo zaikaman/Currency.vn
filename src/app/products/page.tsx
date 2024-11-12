@@ -120,7 +120,7 @@ export default function ProductsPage() {
                   placeholder="Tìm kiếm sản phẩm..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-2 pl-10 bg-[#2A2A2A] border border-vintage-black/10 focus:outline-none focus:border-accent"
+                  className="w-full px-4 py-2 pl-10 dark:bg-[#2A2A2A] bg-white dark:text-white text-black border border-light-border dark:border-vintage-black/10 focus:outline-none focus:border-accent"
                 />
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 

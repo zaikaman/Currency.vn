@@ -81,7 +81,7 @@ export default function ProductFilters({ onFilterChange }: FilterProps) {
         <select
           value={sortBy}
           onChange={(e) => handleFilterChange('sort', e.target.value)}
-          className="w-full px-4 py-2 bg-[#2A2A2A] border border-vintage-black/10 focus:outline-none focus:border-accent text-sm"
+          className="w-full px-4 py-2 dark:bg-[#2A2A2A] bg-white dark:text-white text-black border border-light-border dark:border-vintage-black/10 focus:outline-none focus:border-accent"
         >
           <option value="default">Mặc định</option>
           <option value="price-asc">Giá: Thấp đến cao</option>

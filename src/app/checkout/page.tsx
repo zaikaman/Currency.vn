@@ -122,7 +122,7 @@ export default function CheckoutPage() {
                     ...prev,
                     fullName: e.target.value
                   }))}
-                  className="w-full px-4 py-2 bg-[#2A2A2A] border border-vintage-black/10 focus:outline-none focus:border-accent"
+                  className="w-full px-4 py-2 dark:bg-[#2A2A2A] bg-white dark:text-white text-black border border-light-border dark:border-vintage-black/10 focus:outline-none focus:border-accent"
                 />
                 {errors.fullName && (
                   <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
@@ -142,7 +142,7 @@ export default function CheckoutPage() {
                       ...prev,
                       email: e.target.value
                     }))}
-                    className="w-full px-4 py-2 bg-[#2A2A2A] border border-vintage-black/10 focus:outline-none focus:border-accent"
+                    className="w-full px-4 py-2 dark:bg-[#2A2A2A] bg-white dark:text-white text-black border border-light-border dark:border-vintage-black/10 focus:outline-none focus:border-accent"
                   />
                   {errors.email && (
                     <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -161,7 +161,7 @@ export default function CheckoutPage() {
                       ...prev,
                       phone: e.target.value
                     }))}
-                    className="w-full px-4 py-2 bg-[#2A2A2A] border border-vintage-black/10 focus:outline-none focus:border-accent"
+                    className="w-full px-4 py-2 dark:bg-[#2A2A2A] bg-white dark:text-white text-black border border-light-border dark:border-vintage-black/10 focus:outline-none focus:border-accent"
                   />
                   {errors.phone && (
                     <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
@@ -181,7 +181,7 @@ export default function CheckoutPage() {
                     ...prev,
                     address: e.target.value
                   }))}
-                  className="w-full px-4 py-2 bg-[#2A2A2A] border border-vintage-black/10 focus:outline-none focus:border-accent"
+                  className="w-full px-4 py-2 dark:bg-[#2A2A2A] bg-white dark:text-white text-black border border-light-border dark:border-vintage-black/10 focus:outline-none focus:border-accent"
                 />
                 {errors.address && (
                   <p className="text-red-500 text-sm mt-1">{errors.address}</p>
@@ -199,7 +199,7 @@ export default function CheckoutPage() {
                     ...prev,
                     city: e.target.value
                   }))}
-                  className="w-full px-4 py-2 bg-[#2A2A2A] border border-vintage-black/10 focus:outline-none focus:border-accent"
+                  className="w-full px-4 py-2 dark:bg-[#2A2A2A] bg-white dark:text-white text-black border border-light-border dark:border-vintage-black/10 focus:outline-none focus:border-accent"
                 >
                   <option value="">Chọn thành phố</option>
                   <option value="HCM">TP. Hồ Chí Minh</option>
@@ -223,7 +223,7 @@ export default function CheckoutPage() {
                     ...prev,
                     note: e.target.value
                   }))}
-                  className="w-full px-4 py-2 bg-[#2A2A2A] border border-vintage-black/10 focus:outline-none focus:border-accent"
+                  className="w-full px-4 py-2 dark:bg-[#2A2A2A] bg-white dark:text-white text-black border border-light-border dark:border-vintage-black/10 focus:outline-none focus:border-accent"
                 />
               </div>
 

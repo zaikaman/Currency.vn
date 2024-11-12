@@ -8,6 +8,7 @@ import { Toaster } from 'react-hot-toast';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Chatbot from "@/components/ui/Chatbot";
+import { ThemeProvider } from '@/contexts/ThemeContext';
 
 const montserrat = Montserrat({ 
   subsets: ['vietnamese'],
@@ -55,25 +56,29 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="vi">
-      <body>
-        <CartProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <Chatbot />
-          <Toaster 
-            position="top-center"
-            gutter={8}
-            toastOptions={{
-              style: {
-                marginTop: '4rem'
-              }
-            }}
-          />
-          <SpeedInsights />
-          <Analytics />
-        </CartProvider>
+    <html lang="vi" suppressHydrationWarning>
+      <body className={montserrat.className}>
+        <ThemeProvider>
+          <CartProvider>
+            <div className="min-h-screen bg-white dark:bg-[#1A1A1A] text-light-text dark:text-white transition-colors">
+              <Header />
+              <main>{children}</main>
+              <Footer />
+              <Chatbot />
+              <Toaster 
+                position="top-center"
+                gutter={8}
+                toastOptions={{
+                  style: {
+                    marginTop: '4rem'
+                  }
+                }}
+              />
+              <SpeedInsights />
+              <Analytics />
+            </div>
+          </CartProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
