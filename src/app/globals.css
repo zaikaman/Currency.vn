@@ -48,3 +48,98 @@
     to { opacity: 1; }
   }
 }
+
+/* Journal Post Styles */
+.prose .lead {
+  font-size: 1.25rem;
+  color: var(--muted);
+}
+
+.prose figure {
+  margin: 2rem 0;
+}
+
+.prose figure img {
+  border-radius: 0.5rem;
+}
+
+.prose figcaption {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.prose .process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.prose .step {
+  padding: 1.5rem;
+  background: var(--muted/0.05);
+  border-radius: 0.5rem;
+}
+
+.prose blockquote {
+  font-style: italic;
+  border-left-color: var(--accent);
+}
+
+.prose blockquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.prose .related-posts {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: var(--muted/0.05);
+  border-radius: 0.5rem;
+}
+
+.prose .related-posts ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prose .related-posts li {
+  margin: 0.5rem 0;
+}
+
+.prose .related-posts a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.prose .related-posts a:hover {
+  text-decoration: underline;
+}
+
+/* Thêm styles cho prose-vintage */
+.prose-vintage {
+  @apply dark:text-white text-black;
+}
+
+.prose-vintage h1,
+.prose-vintage h2,
+.prose-vintage h3,
+.prose-vintage h4,
+.prose-vintage h5,
+.prose-vintage h6,
+.prose-vintage p,
+.prose-vintage ul,
+.prose-vintage ol,
+.prose-vintage blockquote,
+.prose-vintage pre {
+  @apply dark:text-white text-black;
+}
+
+.prose-vintage a {
+  @apply dark:text-white text-black hover:text-accent;
+}

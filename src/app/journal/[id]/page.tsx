@@ -3,18 +3,23 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import Loading from "@/components/ui/Loading";
 import ErrorMessage from "@/components/ui/ErrorMessage";
+import { journalPosts } from "@/data/journalPosts";
 
 interface JournalPost {
   id: number;
   title: string;
   content: string;
   image: string;
+  thumbnail: string;
   date: string;
   category: string;
   author: string;
+  tags: string[];
+  readingTime: string;
 }
 
 export default function JournalPostPage() {
@@ -26,28 +31,11 @@ export default function JournalPostPage() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        // Giả lập dữ liệu chi tiết bài viết
-        setPost({
-          id: Number(params.id),
-          title: "Nghệ Thuật Thuộc Da Truyền Thống",
-          content: `
-            <p>Nghề thuộc da thủ công là một trong những nghề thủ công lâu đời nhất của nhân loại, đòi hỏi sự kiên nhẫn, kỹ thuật tinh xảo và kinh nghiệm được tích lũy qua nhiều năm tháng.</p>
-            
-            <h2>Lịch Sử Phát Triển</h2>
-            <p>Từ thời cổ đại, con người đã biết cách thuộc da động vật để tạo ra các sản phẩm phục vụ đời sống. Qua hàng nghìn năm, kỹ thuật này đã được cải tiến và phát triển, tạo ra những sản phẩm da có chất lượng ngày càng cao.</p>
-            
-            <h2>Quy Trình Thuộc Da</h2>
-            <p>Quy trình thuộc da truyền thống bao gồm nhiều bước phức tạp, từ việc làm sạch, ngâm tẩm, đến xử lý bề mặt. Mỗi bước đều đòi hỏi sự tỉ mỉ và kinh nghiệm của người thợ thủ công.</p>
-            
-            <h2>Nghệ Nhân Và Tương Lai</h2>
-            <p>Ngày nay, dù công nghệ đã phát triển, nhưng giá trị của những sản phẩm da thủ công vẫn được đánh giá cao. Các nghệ nhân vẫn đang nỗ lực bảo tồn và phát triển nghề truyền thống này.</p>
-          `,
-          image: "https://images.unsplash.com/photo-1531011266462-6d6e6bf6bd88",
-          date: "2024-03-15",
-          category: "Craft",
-          author: "Nguyễn Văn A"
-        });
+        setIsLoading(true);
+        await new Promise(resolve => setTimeout(resolve, 500));
+        const foundPost = journalPosts.find(p => p.id === Number(params.id));
+        if (!foundPost) throw new Error("Không tìm thấy bài viết");
+        setPost(foundPost);
       } catch (error) {
         setError(error as Error);
       } finally {
@@ -74,15 +62,23 @@ export default function JournalPostPage() {
 
         <article className="space-y-8">
           <header className="space-y-4">
-            <div className="flex items-center gap-4 text-sm text-muted">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
               <time>{new Date(post.date).toLocaleDateString('vi-VN')}</time>
               <span>{post.category}</span>
               <span>Bởi {post.author}</span>
+              <span>{post.readingTime}</span>
             </div>
-            <h1 className="text-3xl font-montserrat">{post.title}</h1>
+            <h1 className="text-4xl font-montserrat leading-tight">{post.title}</h1>
+            <div className="flex gap-2">
+              {post.tags.map(tag => (
+                <span key={tag} className="px-2 py-1 bg-muted/10 text-sm rounded">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </header>
 
-          <div className="aspect-[16/9] bg-muted/10 relative">
+          <div className="aspect-[16/9] bg-muted/10 relative rounded-lg overflow-hidden">
             <Image
               src={post.image}
               alt={post.title}
@@ -96,6 +92,23 @@ export default function JournalPostPage() {
             className="prose prose-vintage max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          <footer className="border-t border-muted/10 pt-8 mt-16">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-sm font-medium mb-2">Chia sẻ bài viết</h3>
+                <div className="flex gap-4">
+                  {/* Add social share buttons */}
+                </div>
+              </div>
+              <Link 
+                href="/journal"
+                className="text-sm hover:text-accent transition-colors"
+              >
+                ← Quay lại Nhật ký
+              </Link>
+            </div>
+          </footer>
         </article>
       </div>
     </div>
