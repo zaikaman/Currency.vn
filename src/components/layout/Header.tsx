@@ -66,7 +66,7 @@ export default function Header() {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div 
-              className={`absolute top-full left-0 right-0 bg-background border-b border-vintage-black/10 md:hidden z-50 transform transition-transform duration-300 ${
+              className={`absolute top-full left-0 right-0 bg-white dark:bg-background border-b border-light-border dark:border-vintage-black/10 md:hidden z-50 transform transition-transform duration-300 ${
                 isMenuOpen ? 'translate-y-0' : '-translate-y-full'
               }`}
               onClick={() => setIsMenuOpen(false)}
@@ -74,21 +74,21 @@ export default function Header() {
               <div className="flex flex-col p-4 max-w-7xl mx-auto">
                 <Link 
                   href="/products" 
-                  className="py-4 hover:text-accent transition-colors border-b border-vintage-black/5 text-lg"
+                  className="py-4 hover:text-accent transition-colors border-b border-light-border dark:border-vintage-black/5 text-lg text-black dark:text-white"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   SẢN PHẨM
                 </Link>
                 <Link 
                   href="/about" 
-                  className="py-3 hover:text-accent transition-colors border-b border-vintage-black/5"
+                  className="py-3 hover:text-accent transition-colors border-b border-light-border dark:border-vintage-black/5 text-black dark:text-white"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   GIỚI THIỆU
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="py-3 hover:text-accent transition-colors"
+                  className="py-3 hover:text-accent transition-colors text-black dark:text-white"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   LIÊN HỆ
