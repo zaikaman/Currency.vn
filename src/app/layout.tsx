@@ -14,8 +14,38 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "currency.vn | Đồ Da Tối Giản",
-  description: "Sản phẩm ví da và phụ kiện thủ công với thiết kế tối giản",
+  title: "Currency VN | Đồ Da Thủ Công Cao Cấp Việt Nam",
+  description: "Currency VN - Thương hiệu đồ da thủ công cao cấp tại Việt Nam. Thiết kế tối giản, chất liệu da bò thật 100%, kỹ thuật thủ công truyền thống từ những nghệ nhân lành nghề.",
+  keywords: "currency vn, currencyvn, đồ da, ví da, đồ da thủ công, leather wallet vietnam, handmade leather, currencyvn.vercel.app",
+  openGraph: {
+    title: "Currency VN | Đồ Da Thủ Công Cao Cấp Việt Nam",
+    description: "Thương hiệu đồ da thủ công cao cấp tại Việt Nam",
+    url: "https://currencyvn.vercel.app",
+    siteName: "Currency VN",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
 };
 
 export default function RootLayout({
