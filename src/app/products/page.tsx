@@ -27,21 +27,24 @@ export default function ProductsPage() {
             title: "Ví Da Đứng Classic",
             price: 850000,
             image: "/images/placeholder.png",
-            description: "Ví da thủ công với thiết kế đứng cổ điển"
+            description: "Ví da thủ công với thiết kế đứng cổ điển",
+            rating: { average: 4.7, count: 28 }
           },
           {
             id: 2,
             title: "Ví Da Ngang Minimal",
             price: 750000,
             image: "/images/placeholder.png",
-            description: "Ví da ngang tối giản cho người dùng hiện đại"
+            description: "Ví da ngang tối giản cho người dùng hiện đại",
+            rating: { average: 4.5, count: 15 }
           },
           {
             id: 3,
             title: "Ví Card Holder",
             price: 450000,
             image: "/images/placeholder.png",
-            description: "Ví đựng card nhỏ gọn"
+            description: "Ví đựng card nhỏ gọn",
+            rating: { average: 4.2, count: 10 }
           }
         ]);
       } catch (error) {

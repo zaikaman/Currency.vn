@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { Product } from '@/types';
 import ErrorBoundary from "@/components/ErrorBoundary";
 import ErrorMessage from "@/components/ui/ErrorMessage";
+import ProductReviews from "@/components/ui/ProductReviews";
 
 export default function ProductDetailPage() {
   return (
@@ -102,6 +103,12 @@ function ProductDetail() {
             </button>
           </div>
         </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 mt-16">
+        <ProductReviews 
+          productId={product.id} 
+          rating={{ average: 4.7, count: 28 }}
+        />
       </div>
     </div>
   );
